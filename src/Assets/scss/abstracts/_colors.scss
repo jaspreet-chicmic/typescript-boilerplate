@@ -1,0 +1,33 @@
+// _colors
+
+:root {
+    --base-color: 61,20,76;
+    --primary-color: #b6256a;
+
+    --white-color: #ffffff;
+    --black-color: #000000;
+
+    --light-pink-color-900: #f6d2e4;
+    --light-pink-color-800: #f9e3ee;
+    --light-pink-color-700: #fceef5;
+    --base-light-color: #9d89a5;
+
+    --grey-color-700: #d9d9d9;
+
+    --error-color: #ff0000;
+}
+
+$base-color: var(--base-color);
+$primary-color: var(--primary-color);
+
+$white-color: var(--white-color);
+$black-color: var(--black-color);
+
+$light-pink-color-900: var(--light-pink-color-900);
+$light-pink-color-800: var(--light-pink-color-800);
+$light-pink-color-700: var(--light-pink-color-700);
+$base-light-color :var(--base-light-color);
+$grey-color-700: var(--grey-color-700);
+$error-color: var(--error-color);
+
+$transparent: transparent;

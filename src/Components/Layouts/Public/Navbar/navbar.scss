@@ -1,0 +1,177 @@
+@import '../../../../Assets/scss/base';
+.header {
+  top: 0;
+  width: 100%;
+  padding: 10px 0;
+  position: $absolute;
+  z-index: 111;
+  /* background: var(--light-pink-color-700); */
+  .btn {
+    padding: 0.56rem 1.7rem;
+    box-shadow: 0px 4px 4px rgba(182, 37, 106, 0.21);
+    a {
+      color: var(--white-color);
+      font-weight: $font-regular;
+    }
+  }
+}
+@at-root {
+  .notification {
+    background: rgba(61, 60, 76, 0.2);
+    @include border-radius (40px);
+    position: $relative;
+    width: 50px;
+    height: 50px;
+    @media (max-width:1200px) {
+      margin-right: .75rem;
+    }
+    img {
+      width: 22px;
+    }
+  }
+  .badge-status {
+    position: $absolute;
+    top: 0px;
+    right: 0px;
+    width: 20px;
+    height: 20px;
+    padding: 4px;
+    text-align: $center;
+    @include flexCenter;
+    @include font-size (.8);
+    color: var(--white-color);
+    @include border-radius (10px);
+    background: var(--primary-color);
+  }
+}
+
+/* Search */
+.searchbar {
+  max-width: 230px;
+  margin: 0 15px;
+  @media (max-width: 1200px) {
+    margin: 0 10px;
+  }
+  @media (max-width: 991px) {
+    display: $none;
+  }
+  em {
+    position: $absolute;
+    top: 50%;
+    left: 15px;
+    @include transform (translateY(-50%));
+  }
+  .form-control {
+    padding-left: 46px;
+    @include font-size (1);
+    @include font-size (.8);
+    background: var(--white-color);
+    border: 1px solid var(--light-pink-color-900);
+  }
+}
+
+/* Menu */
+.navbar {
+  li {
+    margin: 0 25px;
+    a {
+      color: rgba(var(--base-color),1);
+      font-size: $inherit;
+      @include flexbox;
+      @include align-items ($center);
+      em {
+        margin-right: 7px;
+        display: inline-flex;
+        svg,
+        img {
+          width: 19px;
+          max-height: 19px;
+          display: $inline-block;
+        }
+      }
+    }
+    &.active a,
+    &:hover {
+      color: rgba(var(--base-color),1);
+    }
+  }
+}
+
+.navbar-menu li a:hover svg,
+.navbar-menu li.active a svg {
+  fill: rgba(var(--base-color),1);
+  @include opacity (0.7);
+}
+
+/* hamburger Menu */
+@media (min-width: 1200px) {
+  .hamburger {
+    display: $none;
+  }
+}
+@media (max-width: 1200px) {
+  .hamburger {
+    width: 50px;
+    border: 0;
+    @include flexbox;
+    @include flex-direction (column);
+    background: $transparent;
+    span {
+      background: rgba(var(--base-color),1);
+      @include border-radius (10px);
+      height: 4px;
+      margin: 4px 0;
+      transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+      &:nth-of-type(1) {
+        width: 50%;
+      }
+      &:nth-of-type(2) {
+        width: 100%;
+      }
+      &:nth-of-type(3) {
+        width: 75%;
+      }
+    }
+  }
+
+  .is-menu-active .hamburger span:nth-of-type(1) {
+    transform-origin: bottom;
+    transform: rotatez(40deg) translate(5px, 1px);
+  }
+  .is-menu-active .hamburger span:nth-of-type(2) {
+    transform-origin: top;
+    @include transform (rotatez(-45deg));
+  }
+  .is-menu-active .hamburger span:nth-of-type(3) {
+    width: 50%;
+    transform-origin: bottom;
+    transform: translate(18px, -7px) rotatez(41deg);
+  }
+
+  .is-menu-active .navbar {
+    display: $block;
+    @include transform (translateX(0%));
+  }
+  .navbar {
+    background: var(--light-pink-color-800);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    padding: 20px 0;
+    height: 100%;
+    width: 300px;
+    position: $fixed;
+    top: 0;
+    left: 0;
+    overflow-y: $auto;
+    @include transform (translateX(-100%));
+    @include transition (all, .5s, ease-in-out);
+    z-index: 11;
+  }
+  .navbar-menu {
+    @include flex-direction (column);
+    overflow-x: $hidden;
+    overflow-y: $auto;
+    li {
+      padding: 15px 0;
+    }
+  }
+}

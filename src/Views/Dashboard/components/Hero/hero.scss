@@ -1,0 +1,127 @@
+@import '../../../../Assets/scss/base';
+
+$herobanner: "../../../Assets/img/howwork/work_pattern.webp";
+.hero_banner {
+    padding: 20px 0 0;
+    overflow: $hidden;
+    z-index: 1;
+}
+.pattern_shape {
+    position: $absolute;
+    left: 0;
+    bottom: 120px;
+    max-width: 70%;
+    max-height: 100%;
+}
+.pattern_shape img,
+.pattern_shaperht img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.pattern_shaperht {
+    position: $absolute;
+    width: 40%;
+    top: -210px;
+    right: 0;
+}
+.banner_content {
+    position: $relative;
+    z-index: 11;
+}
+@media (min-width: 1200px) {
+    .banner_content {
+        margin-top: 40px;
+    }
+}
+.banner_content h1 {
+    font-weight: 400;
+}
+.banner_content h1 strong {
+    font-weight: 600;
+}
+.banner_content p {
+    line-height: 1.8;
+}
+.counter {
+    margin: 20px 0;
+}
+.counter li {
+    margin: 10px 0 0;
+    padding-right: 10px;
+    max-width: 160px;
+}
+@media (min-width: 1440px) {
+    .banner_content {
+        max-width: 690px;
+    }
+    .counter {
+        margin: 50px 0 20px;
+    }
+    .counter li {
+        max-width: 210px;
+        padding-right: 50px;
+    }
+}
+
+.video_col:not(:last-child) {
+    margin-bottom: 25px;
+}
+.video_col video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.video_col {
+    width: 100%;
+    padding-bottom: 100%;
+    position: relative;
+    margin-left: auto;
+    overflow: hidden;
+}
+.video_col_one {
+    border-radius: 50px 50px 0px 50px;
+    max-width: 330px;
+    padding-bottom: 80%;
+}
+.video_col_two {
+    padding-bottom: 90%;
+    border-radius: 50px 0px 50px 50px;
+}
+.video_col_third {
+    max-width: 445px;
+    border-radius: 20px;
+    padding-bottom: 100%;
+    box-shadow: -4px 2px 20px rgba(0, 0, 0, 0.25);
+}
+.video_col_fourth {
+    max-width: 465px;
+    padding-bottom: 80%;
+    border-radius: 0px 50px 50px 50px;
+}
+.hero_videos::before {
+    content: "";
+    animation: float 5s ease-in-out infinite;
+    background: var(--light-pink-color-800);
+    border-radius: 100px;
+    position: absolute;
+    top: 30%;
+    height: 140%;
+    width: 140%;
+    left: -20%;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    z-index: -11;
+}
+
+@keyframes float {
+    0% {
+        transform: translateX(2px) rotate(45deg);
+    }
+    50% {
+        transform: translateX(10px) rotate(45deg);
+    }
+}

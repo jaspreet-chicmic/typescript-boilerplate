@@ -1,0 +1,10 @@
+@import '../../../Shared/styling/colors.scss';
+
+.upload-container{
+    width: 100%;
+    min-height: 260px;
+    background: $background-view;
+    border: 2px dashed $dark-pink-color;
+    border-radius: 20px;
+    text-align: center;
+}

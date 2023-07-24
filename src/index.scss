@@ -1,0 +1,33 @@
+@import 'Assets/scss/base';
+@import 'Assets/scss/theme.scss';
+
+#main {
+    overflow: $hidden;
+    padding-top: 80px;
+}
+
+.container {
+    @media (min-width:1440px) {
+        max-width: 1360px;
+    }
+    @media (min-width: 1750px) {
+        max-width: 1700px;
+    }
+    &-xl {
+        @media (min-width: 1200px) {
+            max-width: 1180px;
+        }
+        @media (min-width:1440px) {
+            max-width: 1320px;
+        }
+    }
+}
+
+.title_h2 {
+    @media (min-width: 1200px) {
+        margin-bottom: 40px;
+    }
+    @media (max-width: 1200px) {
+        margin-bottom: 30px;
+    }
+}
